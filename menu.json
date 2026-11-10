@@ -1,0 +1,304 @@
+{
+    "restoran": "Atabey Premium",
+    "kategoriler": [
+        {
+            "id": "kahvalti",
+            "ad": "Kahvaltı & Tavalar",
+            "urunler": [
+                {
+                    "ad": "Frig Serpme Kahvaltı",
+                    "fiyat": "1250 ₺",
+                    "aciklama": "Taze ekmekler, domates, salatalık, pastırma, sucuk, kavurmalı yumurta, börek tabağı, patates kızartması, doğal bal, tereyağı, ev yapımı reçeller, söğüş tabağı ve peynir tabağı ile servis edilir. (Ekstra Kişi Başı: 300 ₺)",
+                    "alerjenler": "Süt ürünleri, yumurta, gluten",
+                    "kalori": "950 kcal",
+                    "sef_onerisi": true
+                },
+                {
+                    "ad": "Kahvaltı Tabağı",
+                    "fiyat": "290 ₺",
+                    "aciklama": "Çeşitli zeytinler, peynir çeşitleri, domates, salatalık, yumurta, bal, tereyağı ve ev yapımı reçeller ile servis edilir.",
+                    "alerjenler": "Süt ürünleri, yumurta",
+                    "kalori": "620 kcal"
+                },
+                {
+                    "ad": "Kavurmalı Yumurta",
+                    "fiyat": "275 ₺",
+                    "aciklama": "Özenle kavrulmuş yumuşacık etlerle birleşen taze yumurtalar.",
+                    "alerjenler": "Yumurta, et",
+                    "kalori": "480 kcal"
+                },
+                {
+                    "ad": "Pastırmalı Yumurta",
+                    "fiyat": "250 ₺",
+                    "aciklama": "Taze yumurtalar, lezzetli pastırma dilimleriyle zenginleştirilir.",
+                    "alerjenler": "Yumurta",
+                    "kalori": "420 kcal"
+                },
+                {
+                    "ad": "Sucuklu Yumurta",
+                    "fiyat": "250 ₺",
+                    "aciklama": "Taze yumurtalar lezzetli dana sucuk ile zenginleştirilir.",
+                    "alerjenler": "Yumurta",
+                    "kalori": "450 kcal"
+                },
+                {
+                    "ad": "Ege Otlu Omlet",
+                    "fiyat": "220 ₺",
+                    "aciklama": "Taze yumurtalar hafifçe pişirilerek yumuşak ve kabarık omlet.",
+                    "alerjenler": "Yumurta",
+                    "kalori": "310 kcal"
+                },
+                {
+                    "ad": "Menemen",
+                    "fiyat": "190 ₺",
+                    "aciklama": "Taze domates, biber ve özenle seçilmiş yumurtalarla sıcak tavada yavaşça pişirilir.",
+                    "alerjenler": "Yumurta",
+                    "kalori": "290 kcal"
+                }
+            ]
+        },
+        {
+            "id": "et",
+            "ad": "Et Yemekleri & Şiş Kebaplar",
+            "urunler": [
+                {
+                    "ad": "Karışık Izgara",
+                    "fiyat": "1350 ₺",
+                    "aciklama": "Sucuk, Kuzu Pirzola, Et Şiş, Köfte, Tavuk Şiş, Lokum, Köz Biber, Köz Domates, Patates Kızartması, Sıcak Pide, Soğuk mezeler ve salata ile servis edilir.",
+                    "alerjenler": "Et ürünleri, gluten",
+                    "kalori": "980 kcal",
+                    "sef_onerisi": true
+                },
+                {
+                    "ad": "Kilo Köfte",
+                    "fiyat": "350 ₺",
+                    "aciklama": "Kiloluk servis, taze garnitürler ve sıcak pide ile.",
+                    "alerjenler": "Kıyma, gluten",
+                    "kalori": "1600 kcal"
+                },
+                {
+                    "ad": "Et Şiş",
+                    "fiyat": "620 ₺",
+                    "aciklama": "Kuşbaşı etlerin şişe dizilerek közde pişirilmesiyle hazırlanır. Yanında közlenmiş biber, çıtır sıcak pide, soğuk mezeler ve salata ile servis edilir.",
+                    "alerjenler": "Et, gluten",
+                    "kalori": "610 kcal"
+                },
+                {
+                    "ad": "Antrikot",
+                    "fiyat": "720 ₺",
+                    "aciklama": "Antrikot, Köz Biber, Köz Domates, Patates Kızartması, Sıcak Pide, Soğuk mezeler ve salata ile servis edilir.",
+                    "alerjenler": "Et, gluten",
+                    "kalori": "710 kcal"
+                },
+                {
+                    "ad": "Pirzola",
+                    "fiyat": "790 ₺",
+                    "aciklama": "Kuzu Pirzola, Sıcak Pide, soğuk mezeler ve salata ile servis edilir.",
+                    "alerjenler": "Kuzu eti, gluten",
+                    "kalori": "750 kcal"
+                },
+                {
+                    "ad": "Lokum",
+                    "fiyat": "790 ₺",
+                    "aciklama": "Yumuşacık dana bonfile dilimleri, Sıcak Pide, soğuk mezeler ve salata ile servis edilir.",
+                    "alerjenler": "Et, gluten",
+                    "kalori": "680 kcal"
+                },
+                {
+                    "ad": "Köfte (Porsiyon)",
+                    "fiyat": "340 ₺",
+                    "aciklama": "Lezzetli kıymayla hazırlanmış köfte özenle ateşte ustalıkla pişirilerek sunulur. Izgara mevsim sebzeleri sıcak pide, soğuk mezeler ve salata ile servis edilir.",
+                    "alerjenler": "Kıyma, gluten",
+                    "kalori": "540 kcal"
+                },
+                {
+                    "ad": "Diyarbakır Tava",
+                    "fiyat": "570 ₺",
+                    "aciklama": "Kuşbaşı, taze domates, biber harmanlanıp sac tavada pişirilir. Yöresel baharatlar ve sarımsak ile lezzetlenir.",
+                    "alerjenler": "Et, sarımsak",
+                    "kalori": "650 kcal"
+                },
+                {
+                    "ad": "Güveç",
+                    "fiyat": "550 ₺",
+                    "aciklama": "Toprak güveçte, kuşbaşı dana eti ve taze sebzeler, aromatik baharatlarla birlikte ağır ağır pişirilir.",
+                    "alerjenler": "Dana eti",
+                    "kalori": "590 kcal"
+                },
+                {
+                    "ad": "Sucuk Izgara",
+                    "fiyat": "360 ₺",
+                    "aciklama": "Özel baharatlarla marine edilmiş ızgara dana sucuk.",
+                    "alerjenler": "Sucuk",
+                    "kalori": "520 kcal"
+                }
+            ]
+        },
+        {
+            "id": "beyaz",
+            "ad": "Beyaz Etler & Burgerler",
+            "urunler": [
+                {
+                    "ad": "Tavuk Saç Tava",
+                    "fiyat": "350 ₺",
+                    "aciklama": "Taze tavuk eti, domates, biber ve özel baharatlarla saç tavada hazırlanır.",
+                    "alerjenler": "Tavuk",
+                    "kalori": "520 kcal"
+                },
+                {
+                    "ad": "Tavuk Kanat",
+                    "fiyat": "420 ₺",
+                    "aciklama": "Tavuk kanatları kömür ateşinde pişirilir. Yanında közlenmiş biber, taze ve sıcak pide dilimleri, soğuk mezeler ve salata ile servis edilir.",
+                    "alerjenler": "Tavuk, gluten",
+                    "kalori": "580 kcal"
+                },
+                {
+                    "ad": "Tavuk Karışık Kanat",
+                    "fiyat": "350 ₺",
+                    "aciklama": "Tavuk kanatları kömür ateşinde mükemmel şekilde pişirilir. Yanında biber, taze ve sıcak pide dilimleri, soğuk mezeler ve salata ile servis edilir.",
+                    "alerjenler": "Tavuk, gluten",
+                    "kalori": "560 kcal"
+                },
+                {
+                    "ad": "Tavuk Şiş",
+                    "fiyat": "350 ₺",
+                    "aciklama": "Tavuk bonfile, kömür ateşinde pişirilerek hazırlanır. Yanında közlenmiş biber, taze ve sıcak pide dilimleri, soğuk mezeler ve salata ile servis edilir.",
+                    "alerjenler": "Tavuk, gluten",
+                    "kalori": "490 kcal"
+                },
+                {
+                    "ad": "Frig Burger",
+                    "fiyat": "430 ₺",
+                    "aciklama": "Lezzetli dana kıymasıyla hazırlanmış çift köfte, çıtır çıtır kızarmış hamburger ekmeği arasında, taze marul ve cheddar peyniri ile.",
+                    "alerjenler": "Gluten, süt ürünü, et",
+                    "kalori": "780 kcal"
+                },
+                {
+                    "ad": "Ataburger",
+                    "fiyat": "340 ₺",
+                    "aciklama": "Lezzetli kıymayla hazırlanmış köfte, çıtır hamburger ekmeği, taze marul, cheddar peyniri ve patates kızartması ile.",
+                    "alerjenler": "Gluten, süt ürünü, et",
+                    "kalori": "640 kcal"
+                },
+                {
+                    "ad": "Köfte & Patates (Çocuk Menü)",
+                    "fiyat": "360 ₺",
+                    "aciklama": "Lezzetli kıymayla hazırlanmış çocuk köftesi ve patates kızartması.",
+                    "alerjenler": "Gluten, et",
+                    "kalori": "450 kcal"
+                }
+            ]
+        },
+        {
+            "id": "ara",
+            "ad": "Aperatifler & Salatalar",
+            "urunler": [
+                {
+                    "ad": "Atom Tost (Kavurmalı, Pastırmalı, Sucuklu, Kaşarlı)",
+                    "fiyat": "240 ₺",
+                    "aciklama": "Bol malzemeli özel karışık tost; kavurma, pastırma, sucuk ve kaşar içerir.",
+                    "alerjenler": "Gluten, süt ürünü, et",
+                    "kalori": "580 kcal",
+                    "sef_onerisi": true
+                },
+                {
+                    "ad": "Tost (Sucuk-Kaşar / Kaşar)",
+                    "fiyat": "150 ₺",
+                    "aciklama": "Taze tost ekmeği arasında kaşar ve sucuk.",
+                    "alerjenler": "Gluten, süt ürünü",
+                    "kalori": "390 kcal"
+                },
+                {
+                    "ad": "Patates Kızartması",
+                    "fiyat": "150 ₺",
+                    "aciklama": "Altın sarısı çıtır patates kızartması.",
+                    "alerjenler": "Gluten",
+                    "kalori": "340 kcal"
+                },
+                {
+                    "ad": "Ton Balıklı Salata",
+                    "fiyat": "250 ₺",
+                    "aciklama": "Taze yeşillikler, mısır, zeytinyağı ve ton balığı.",
+                    "alerjenler": "Balık",
+                    "kalori": "310 kcal"
+                },
+                {
+                    "ad": "Tulum Peynirli Salata",
+                    "fiyat": "180 ₺",
+                    "aciklama": "Akdeniz yeşillikleri ve yöresel tulum peyniri.",
+                    "alerjenler": "Süt ürünü",
+                    "kalori": "280 kcal"
+                },
+                {
+                    "ad": "Kaşık Salata",
+                    "fiyat": "150 ₺",
+                    "aciklama": "İnce kıyılmış domates, salatalık, biber ve özel sos.",
+                    "alerjenler": "Vegan",
+                    "kalori": "120 kcal"
+                },
+                {
+                    "ad": "Söğüş Tabağı",
+                    "fiyat": "100 ₺",
+                    "aciklama": "Domates, salatalık, biber ve limon dilimleri.",
+                    "alerjenler": "Vegan",
+                    "kalori": "90 kcal"
+                },
+                {
+                    "ad": "Peynir Tabağı",
+                    "fiyat": "150 ₺",
+                    "aciklama": "Kaşar, Cheddar, Fındık peynir, Çubuk peynir, Köy peyniri çeşitleri.",
+                    "alerjenler": "Süt ürünü",
+                    "kalori": "410 kcal"
+                }
+            ]
+        },
+        {
+            "id": "tatli",
+            "ad": "Çorba, Tatlılar & İçecekler",
+            "urunler": [
+                {
+                    "ad": "Günün Çorbası",
+                    "fiyat": "80 ₺",
+                    "aciklama": "Her gün taze hazırlanan çorba çeşitleri.",
+                    "alerjenler": "Gluten",
+                    "kalori": "160 kcal"
+                },
+                {
+                    "ad": "Kemalpaşa Tatlısı",
+                    "fiyat": "120 ₺",
+                    "aciklama": "Tahin ve kaymak ile servis edilir.",
+                    "alerjenler": "Gluten, süt ürünü",
+                    "kalori": "380 kcal"
+                },
+                {
+                    "ad": "Ayran / Şalgam",
+                    "fiyat": "45 ₺",
+                    "aciklama": "Geleneksel soğuk içecekler.",
+                    "alerjenler": "Süt ürünü / Şalgam",
+                    "kalori": "70 kcal"
+                },
+                {
+                    "ad": "Kola / Fanta / Gazoz",
+                    "fiyat": "55 ₺",
+                    "aciklama": "Soğuk gazlı içecek çeşitleri.",
+                    "alerjenler": "-",
+                    "kalori": "140 kcal"
+                },
+                {
+                    "ad": "Türk Kahvesi",
+                    "fiyat": "60 ₺",
+                    "aciklama": "Geleneksel köpüklü Türk kahvesi, lokum eşliğinde.",
+                    "alerjenler": "-",
+                    "kalori": "20 kcal"
+                },
+                {
+                    "ad": "Cappuccino / Latte / Mocha",
+                    "fiyat": "100 ₺",
+                    "aciklama": "Özel kahve çeşitleri.",
+                    "alerjenler": "Süt ürünü",
+                    "kalori": "180 kcal"
+                }
+            ]
+        }
+    ]
+}
