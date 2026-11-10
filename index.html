@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atabey Premium - QR Menü</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0b0b;
+            --card-bg: #141414;
+            --card-hover: #1c1c1c;
+            --text-main: #f0f0f0;
+            --text-muted: #999999;
+            --accent: #d4af37; /* Premium Altın Vurgu */
+            --accent-glow: rgba(212, 175, 55, 0.15);
+            --border: #262626;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 24px 16px 40px 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* HEADER & LOGO */
+        header {
+            text-align: center;
+            padding: 20px 0 25px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 25px;
+        }
+
+        .logo-box {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 12px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* YASAL KAREKOD BİLGİLENDİRME ALANI (Yönetmelik Madde 5 & 6) */
+        .legal-qr-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .legal-qr-box h3 {
+            font-size: 0.95rem;
+            color: var(--accent);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .legal-qr-box p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* ARAMA BARI */
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 20px 14px 45px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            fill: var(--text-muted);
+        }
+
+        /* KATEGORİ SEKMELERİ */
+        .categories {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            scrollbar-width: none;
+        }
+
+        .categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn.active {
+            background: var(--accent);
+            color: #0b0b0b;
+            border-color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* MENÜ BÖLÜMLERİ */
+        section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* MENÜ ELEMANLARI */
+        .menu-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            border-color: var(--accent);
+            background: var(--card-hover);
+            transform: translateY(-2px);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+            gap: 10px;
+        }
+
+        .item-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        .item-price {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .item-desc {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .badges {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .badge {
+            font-size: 0.68rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-chef {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* ALERJEN / DETAY MODAL */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: flex-end;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #181818;
+            border: 1px solid var(--border);
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            max-width: 600px;
+            padding: 24px;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.8rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-body p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .modal-detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border);
+            font-size: 0.85rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0 10px 0;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+            letter-spacing: 1px;
+        }
+        
+        .loading {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- ORİJİNAL LOGO GÖRSELİ -->
+        <div class="logo-box">
+            <img src="logo.png" alt="Atabey Premium Logo" class="logo-img">
+        </div>
+    </header>
+
+    <!-- RESMİ GIDA İŞLETMESİ KAREKOD BİLDİRİM ALANI -->
+    <div class="legal-qr-box">
+        <h3>Tarım ve Orman Bakanlığı Gıda İşletmesi Bilgi Sistemi</h3>
+        <p>İşletmemizin resmi kayıt/onay bilgilerini ve son denetim tarihini mobil cihazınızda <strong>Tarım Cebimde</strong> uygulaması üzerinden sorgulayabilirsiniz[cite: 7].</p>
+    </div>
+
+    <!-- Arama Alanı -->
+    <div class="search-container">
+        <svg class="search-icon" viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Menüde lezzet ara (Örn: Antrikot, Köfte, Kahvaltı)...">
+    </div>
+
+    <!-- Kategori Sekme Butonları -->
+    <div class="categories" id="categoryContainer">
+        <button class="category-btn active" onclick="filterCategory('all', this)">Tümü</button>
+    </div>
+
+    <!-- YEMEK LİSTELERİ -->
+    <div id="menuContent">
+        <div class="loading">Menü yükleniyor...</div>
+    </div>
+
+    <!-- ALERJEN / DETAY MODAL BİLEŞENİ -->
+    <div class="modal-overlay" id="detailModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 class="modal-title" id="mTitle">Yemek Adı</h3>
+                <button class="close-btn" onclick="closeModalDirect()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="mDesc">Açıklama alanı</p>
+                <div class="modal-detail-row">
+                    <span>Fiyat:</span>
+                    <strong id="mPrice" style="color:var(--accent);">0 ₺</strong>
+                </div>
+                <div class="modal-detail-row">
+                    <span>Alerjenler / İçerik:</span>
+                    <span id="mAllergen" style="color:var(--text-main);">Yok</span>
+                </div>
+                <div class="modal-detail-row">
+                    <span>Tahmini Kalori:</span>
+                    <span id="mCal" style="color:var(--text-main);">0 kcal</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ATABEY PREMIUM. TÜM HAKLARI SAKLIDIR.</p>
+    </footer>
+
+    <script>
+        // menu.json dosyasından verileri otomatik çek
+        fetch('menu.json')
+            .then(response => response.json())
+            .then(data => {
+                renderMenu(data);
+            })
+            .catch(error => {
+                console.error('Menü yüklenirken hata oluştu:', error);
+                document.getElementById('menuContent').innerHTML = '<div class="loading" style="color:#e74c3c;">Menü yüklenemedi. Lütfen daha sonra tekrar deneyin.</div>';
+            });
+
+        function renderMenu(data) {
+            const catContainer = document.getElementById('categoryContainer');
+            const menuContainer = document.getElementById('menuContent');
+
+            // Kategori butonlarını oluştur
+            let catHTML = '<button class="category-btn active" onclick="filterCategory(\'all\', this)">Tümü</button>';
+            data.kategoriler.forEach(cat => {
+                catHTML += `<button class="category-btn" onclick="filterCategory('${cat.id}', this)">${cat.ad}</button>`;
+            });
+            catContainer.innerHTML = catHTML;
+
+            // Menü bölümlerini oluştur
+            let menuHTML = '';
+            data.kategoriler.forEach(cat => {
+                menuHTML += `<section data-category="${cat.id}">
+                    <h2 class="section-title">${cat.ad}</h2>`;
+                
+                cat.urunler.forEach(item => {
+                    let badgeHtml = item.sef_onerisi ? '<div class="badges"><span class="badge badge-chef">Şefin Önerisi</span></div>' : '';
+                    
+                    const safeName = item.ad.replace(/'/g, "\\'");
+                    const safePrice = item.fiyat.replace(/'/g, "\\'");
+                    const safeDesc = item.aciklama.replace(/'/g, "\\'");
+                    const safeAllergen = (item.alerjenler || '-').replace(/'/g, "\\'");
+                    const safeCal = (item.kalori || '-').replace(/'/g, "\\'");
+
+                    menuHTML += `
+                    <div class="menu-item" onclick="openModal('${safeName}', '${safePrice}', '${safeDesc}', '${safeAllergen}', '${safeCal}')">
+                        <div class="item-header">
+                            <span class="item-name">${item.ad}</span>
+                            <span class="item-price">${item.fiyat}</span>
+                        </div>
+                        <p class="item-desc">${item.aciklama}</p>
+                        ${badgeHtml}
+                    </div>`;
+                });
+
+                menuHTML += `</section>`;
+            });
+
+            menuContainer.innerHTML = menuHTML;
+        }
+
+        // Kategori Filtreleme
+        function filterCategory(cat, btn) {
+            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const sections = document.querySelectorAll('#menuContent section');
+            sections.forEach(sec => {
+                if (cat === 'all' || sec.getAttribute('data-category') === cat) {
+                    sec.style.display = 'block';
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
+        }
+
+        // Arama Filtresi
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const items = document.querySelectorAll('.menu-item');
+            
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Modal Aç/Kapa
+        function openModal(title, price, desc, allergen, cal) {
+            document.getElementById('mTitle').innerText = title;
+            document.getElementById('mPrice').innerText = price;
+            document.getElementById('mDesc').innerText = desc;
+            document.getElementById('mAllergen').innerText = allergen;
+            document.getElementById('mCal').innerText = cal;
+            document.getElementById('detailModal').classList.add('active');
+        }
+
+        function closeModal(e) {
+            if (e.target.id === 'detailModal') {
+                document.getElementById('detailModal').classList.remove('active');
+            }
+        }
+
+        function closeModalDirect() {
+            document.getElementById('detailModal').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
